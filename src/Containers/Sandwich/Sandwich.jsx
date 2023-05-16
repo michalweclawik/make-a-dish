@@ -7,8 +7,9 @@ const Sandwich = ({ handleInput }) => {
         <span>Number of Slices of bread </span>
         <input
           required
-          type="text"
+          type="number"
           name="slices_of_bread"
+          placeholder="Type number 1-9"
           onChange={handleInput}
         />
       </label>

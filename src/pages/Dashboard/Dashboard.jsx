@@ -51,7 +51,7 @@ const Dashboard = () => {
       <form className="dashboard-form" onSubmit={handleSubmit}>
         <div className="dasboard-data">
           <label>
-            <span>Name </span>
+            <span>Name a dish </span>
             <input
               required
               type="text"
@@ -61,7 +61,7 @@ const Dashboard = () => {
             />
           </label>
           <label>
-            <span>Preparation Time:</span>
+            <span>Preparation time:</span>
             <input
               required
               name="preparation_time"
@@ -72,7 +72,7 @@ const Dashboard = () => {
             />
           </label>
           <label>
-            <span>Type</span>
+            <span>Choose dish type</span>
             <select
               name="type"
               id="type"
