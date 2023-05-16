@@ -3,8 +3,10 @@ import Pizza from "../../Containers/Pizza/Pizza";
 import "./Dashboard.scss";
 import Soup from "../../Containers/Soup/Soup";
 import Sandwich from "../../Containers/Sandwich/Sandwich";
+import useSendData from "../../hooks/useSendData";
 
 const Dashboard = () => {
+  const { isPending, error, sendRequest, successMessage } = useSendData();
   const [formError, setFormError] = useState(null);
   const [dish, setDish] = useState({
     name: "",
@@ -21,6 +23,19 @@ const Dashboard = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const url =
+      "https://umzzcc503l.execute-api.us-west-2.amazonaws.com/dishes/";
+    try {
+      await sendRequest(url, dish);
+      setDish({
+        name: "",
+        preparation_time: "",
+        type: "",
+      });
+    } catch (error) {
+      // Handle error if the request fails
+      setFormError("An error occurred while sending the request.");
+    }
   };
 
   const handleCancel = () => {
