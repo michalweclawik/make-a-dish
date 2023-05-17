@@ -8,6 +8,9 @@ const Sandwich = ({ handleInput }) => {
         <input
           required
           type="number"
+          min="1"
+          max="10"
+          step="1"
           name="slices_of_bread"
           placeholder="Type number 1-9"
           onChange={handleInput}

@@ -21,7 +21,7 @@ const Soup = ({ handleInput }) => {
           onChange={handleSpicinessChange}
           name="spiciness_scale"
         />
-        <div>Current spiciness: {spiciness}</div>
+        <div>Current spiciness: {spiciness}/10</div>
       </label>
     </div>
   );

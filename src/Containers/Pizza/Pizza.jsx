@@ -10,7 +10,10 @@ const Pizza = ({ handleInput }) => {
           type="number"
           name="no_of_slices"
           onChange={handleInput}
-          placeholder="Slices 2-15"
+          placeholder="Slices 1-9"
+          min="1"
+          max="9"
+          step="1"
         />
       </label>
 
