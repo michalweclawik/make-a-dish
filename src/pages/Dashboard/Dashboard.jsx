@@ -7,7 +7,7 @@ import useSendData from "../../hooks/useSendData";
 
 const Dashboard = () => {
   const { isPending, error, sendRequest, successMessage } = useSendData();
-  const [formError, setFormError] = useState(null);
+
   const [dish, setDish] = useState({
     name: "",
     preparation_time: "",
@@ -25,17 +25,8 @@ const Dashboard = () => {
     e.preventDefault();
     const url =
       "https://umzzcc503l.execute-api.us-west-2.amazonaws.com/dishes/";
-    try {
-      await sendRequest(url, dish);
-      setDish({
-        name: "",
-        preparation_time: "",
-        type: "",
-      });
-    } catch (error) {
-      // Handle error if the request fails
-      setFormError("An error occurred while sending the request.");
-    }
+
+    sendRequest(url, dish);
   };
 
   const handleCancel = () => {
@@ -54,6 +45,7 @@ const Dashboard = () => {
             <span>Name a dish </span>
             <input
               required
+              autoFocus
               type="text"
               name="name"
               onChange={handleInput}
@@ -106,7 +98,6 @@ const Dashboard = () => {
         </div>
         {successMessage && <p>{successMessage}</p>}
         {error && <p>Error: {error}</p>}
-        {formError && <p className="error">{formError}</p>}
       </form>
     </div>
   );
