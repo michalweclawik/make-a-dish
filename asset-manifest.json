@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/make-a-dish/static/css/main.d27a3b17.css",
-    "main.js": "/make-a-dish/static/js/main.aae2ba08.js",
+    "main.js": "/make-a-dish/static/js/main.51378429.js",
     "static/js/787.b1983ecd.chunk.js": "/make-a-dish/static/js/787.b1983ecd.chunk.js",
     "index.html": "/make-a-dish/index.html",
     "main.d27a3b17.css.map": "/make-a-dish/static/css/main.d27a3b17.css.map",
-    "main.aae2ba08.js.map": "/make-a-dish/static/js/main.aae2ba08.js.map",
+    "main.51378429.js.map": "/make-a-dish/static/js/main.51378429.js.map",
     "787.b1983ecd.chunk.js.map": "/make-a-dish/static/js/787.b1983ecd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d27a3b17.css",
-    "static/js/main.aae2ba08.js"
+    "static/js/main.51378429.js"
   ]
 }
