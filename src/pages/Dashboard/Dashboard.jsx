@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Pizza from "../../Containers/Pizza/Pizza";
 import "./Dashboard.scss";
 import Soup from "../../Containers/Soup/Soup";
@@ -7,13 +7,21 @@ import useSendData from "../../hooks/useSendData";
 
 const Dashboard = () => {
   const { isPending, error, sendRequest, successMessage } = useSendData();
-
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [dish, setDish] = useState({
     name: "",
     preparation_time: "",
     type: "",
   });
-
+  useEffect(() => {
+    if (successMessage) {
+      setShowSuccessMessage(true);
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+        handleCancel();
+      }, 1000);
+    }
+  }, [successMessage]);
   const handleInput = (e) => {
     setDish((prev) => ({
       ...prev,
@@ -96,7 +104,7 @@ const Dashboard = () => {
             Cancel
           </button>
         </div>
-        {successMessage && <p>{successMessage}</p>}
+        {showSuccessMessage && <p>{successMessage}</p>}
         {error && <p>Error: {error}</p>}
       </form>
     </div>
