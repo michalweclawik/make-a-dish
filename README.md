@@ -11,7 +11,7 @@
 
 ---
 
-<p align="center"> User friendly online form, expertly crafted using React. This task been set by HexOcean as technical challenge. 
+<p align="center"> User friendly online form, expertly crafted using React (For HexOcean). 
     <br> 
 </p>
 
